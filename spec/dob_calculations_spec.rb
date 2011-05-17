@@ -22,7 +22,7 @@ describe Date do
     end
     
     it "should return number of days" do
-      @old_calculation.round.should == 19
+      @old_calculation.round.should == (Date.strptime("04/06/2011", "%d/%m/%Y") - Time.now.to_date).to_i
     end
     
   end
@@ -37,7 +37,7 @@ describe Date do
     end
     
     it "rounded_days_until should be Fixnum" do
-      @calculation[:rounded_days_until].should == 19
+      @calculation[:rounded_days_until].should == (Date.strptime("04/06/2011", "%d/%m/%Y") - Time.now.to_date).to_i
       @calculation[:rounded_days_until].class.should == Fixnum
     end
     
@@ -46,7 +46,7 @@ describe Date do
       @calculation[:exact_days_until].class.should == Float
     end
 
-    it "next birth date should be == to exact_days_until to date & rounded_days_until to date" do
+    it "next birth date should be == to exact_days_until to_date & rounded_days_until to_date" do
       @calculation[:next_birth_date].should == @calculation[:rounded_days_until].days.from_now.to_date
       @calculation[:next_birth_date].should == @calculation[:exact_days_until].days.from_now.to_date
     end

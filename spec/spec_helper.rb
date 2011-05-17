@@ -17,4 +17,12 @@ RSpec::Matchers.define :take_less_than do |n|
 
 end
 
+def reset_db
+  Customer.all.destroy
+  Dispensary.all.destroy
+  Subscription.all.destroy
+  State.all.destroy
+end
+
+
 
