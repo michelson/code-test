@@ -3,6 +3,7 @@ require "rubygems"
 require "bundler/setup"
 require "rspec"
 require 'benchmark'
+require "faker"
 
 RSpec::Matchers.define :take_less_than do |n|
   chain :seconds do; end

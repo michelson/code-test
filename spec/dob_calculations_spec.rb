@@ -22,7 +22,7 @@ describe Date do
     end
     
     it "should return number of days" do
-      @old_calculation.round.should == 20
+      @old_calculation.round.should == 19
     end
     
   end
@@ -37,7 +37,7 @@ describe Date do
     end
     
     it "rounded_days_until should be Fixnum" do
-      @calculation[:rounded_days_until].should == 20
+      @calculation[:rounded_days_until].should == 19
       @calculation[:rounded_days_until].class.should == Fixnum
     end
     
